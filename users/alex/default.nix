@@ -1,9 +1,9 @@
-{ config, pkgs, inputs, username, ... }: {
+{ config, pkgs, lib, inputs, username, desktop, ... }: {
 
   imports = [ 
     ./firefox/firefox.nix 
     ./waybar/waybar.nix 
-    ./sway/sway.nix
+    ./desktops/${lib.strings.toLower desktop}
     ./vscode
   ];
 
@@ -33,7 +33,7 @@
 
     profileExtra = ''
       [[ "$(tty)" == /dev/tty1 ]] && {
-        sway
+        ${desktop}
       }
     '';
   };
@@ -53,11 +53,6 @@
     enable = true;
     userName = "Alex S";
     userEmail = "alex.sustavov@outlook.com";
-  };
-
-  xdg = {
-    enable = true;
-    #configFile."Code/User/settings.json".source = ./vscode/vscode;
   };
 
   dconf.settings = {

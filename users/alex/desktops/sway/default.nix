@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
 	xdg = {
-		configFile."kanshi/config".source = ./kanshi;
+		configFile."kanshi/config".source = ../../kanshi/config;
 	};
 
    	wayland.windowManager.sway = {

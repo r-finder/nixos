@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, hostname, username, ... }:
+{ config, pkgs, inputs, hostname, username, desktop, ... }:
 {
   system.stateVersion = "23.05"; # Did you read the comment?
   nix = {
@@ -50,7 +50,7 @@
   };
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.extraSpecialArgs = { inherit username; };
+  home-manager.extraSpecialArgs = { inherit username desktop; };
   home-manager.users.${username} = import ../../users/${username};  
 
   # List packages installed in system profile. To search, run:
