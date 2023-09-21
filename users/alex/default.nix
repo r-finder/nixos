@@ -54,8 +54,13 @@
     userEmail = "alex.sustavov@outlook.com";
   };
 
-  dconf.settings = {
-    "org/gnome/desktop/interface" = { font-name = "Sans 9"; };
+  xdg = {
+    enable = true;
+    #configFile."Code/User/settings.json".source = ./vscode/vscode;
   };
+
+  # dconf.settings = {
+  #   "org/gnome/desktop/interface" = { font-name = "Sans 8"; };
+  # };
 
 }
