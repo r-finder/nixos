@@ -2,7 +2,13 @@
 {
 	xdg = {
 		configFile."kanshi/config".source = ../../kanshi/config;
+		configFile."waybar/config".source = ../../waybar/waybar;
+		configFile."waybar/style.css".source = ../../waybar/waybar_css;
 	};
+
+	  home.packages = with pkgs; [ #enabling workspaces through Dexperimental flag
+        waybar
+    ];
 
    	wayland.windowManager.sway = {
     enable = true;

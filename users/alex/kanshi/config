@@ -4,5 +4,5 @@ profile home_office {
 }
 
 profile undocked {
-  output "eDP-1" scale 1.200000
+  output "eDP-1" scale 1.500000
 }

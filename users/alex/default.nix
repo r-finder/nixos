@@ -2,7 +2,6 @@
 
   imports = [ 
     ./firefox/firefox.nix 
-    ./waybar/waybar.nix 
     ./desktops/${lib.strings.toLower desktop}
     ./vscode
   ];
