@@ -1,0 +1,32 @@
+
+
+xwayland enable
+
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+output eDP-1 scale 1.3
+bindswitch --reload --locked lid:on output eDP-1 disable
+bindswitch --reload --locked lid:off output eDP-1 enable
+#output * bg ~/.config/sway/bg_2560x1440.jpg fill
+
+### Input configuration
+input "type:keyboard" {
+    xkb_layout us,ru
+    xkb_variant altgr-intl,
+    xkb_options grp:alt_shift_toggle
+    xkb_numlock enabled
+}
+
+input "type:pointer" {
+	accel_profile "adaptive"
+	pointer_accel -0.8
+}
+
+input "type:touchpad" {
+	dwt enabled
+	tap enabled
+	natural_scroll enabled
+	pointer_accel 0.3
+}
+
+exec dbus-sway-environment
+exec configure-gtk
