@@ -1,9 +1,10 @@
 
 # See https://wiki.hyprland.org/Configuring/Monitors/
-monitor=,preferred,auto,auto
+monitor= eDP-1,preferred,0x210,1.5
+monitor= desc:Lenovo Group Limited E24q-20 V5FHK692,2560x1440@74.78000,1707x0,1
 
 # Execute your favorite apps at launch
-exec-once = configure-gtk & waybar & firefox & kanshi
+exec-once = configure-gtk & waybar & firefox
 
 # Some default env vars.
 env = XCURSOR_SIZE,24
