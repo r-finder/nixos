@@ -112,6 +112,7 @@ $mute = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
 bind = $mainMod, Return, exec, alacritty
 bind = $mainMod SHIFT, Q, killactive,
 bind = $mainMod SHIFT, M, exit,
+bind = $mainMod SHIFT, E, exec, hyprctl reload
 bind = $mainMod, V, togglefloating,
 bind = $mainMod, P, exec, bmenu
 bind = $mainMod, J, togglesplit, # dwindle
