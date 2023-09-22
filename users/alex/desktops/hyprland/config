@@ -97,6 +97,10 @@ device:syna8006:00-06cb:cd8b-touchpad {
 # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
 # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
 
+# trigger when the switch is turning off
+bindl = , switch:off:Lid Switch,exec,hyprctl keyword monitor "eDP-1, 2560x1440, 0x0, 1"
+# trigger when the switch is turning on
+bindl = , switch:on:Lid Switch,exec,hyprctl keyword monitor "eDP-1, disable"
 
 # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 $mainMod = SUPER
