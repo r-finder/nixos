@@ -44,10 +44,13 @@
   users.users.${username} = {
      isNormalUser = true;
      extraGroups = [ "wheel" ]; 
+     shell = pkgs.fish;
      packages = with pkgs; [
 
      ];
   };
+  programs.fish.enable = true;
+
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.extraSpecialArgs = { inherit username desktop; };

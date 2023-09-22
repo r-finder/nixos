@@ -37,6 +37,32 @@
     '';
   };
 
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+    '';
+    plugins = [
+      # Enable a plugin (here grc for colorized command output) from nixpkgs
+      #{ name = "grc"; src = pkgs.fishPlugins.grc.src; }
+    ];
+
+    shellAliases = {
+      bbb = "sudo nixos-rebuild switch --flake ~/nixos";
+      ls = "ls --color=auto";
+      ll = "ls -l";
+      la = "ls -al";
+      grep = "grep --color=auto";
+      c = "clear & clear";
+    };
+
+    loginShellInit = ''
+      if test (tty) = "/dev/tty1"
+        ${desktop}
+      end
+    '';
+  };
+
   home.pointerCursor = {
     name = "Adwaita";
     package = pkgs.gnome.adwaita-icon-theme;
