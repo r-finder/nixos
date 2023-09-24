@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 {
 	xdg = {
-		configFile."waybar/config".source = ../../waybar/waybar;
-		configFile."waybar/style.css".source = ../../waybar/waybar_css;
+		configFile."waybar/config".source = ./config_waybar;
+		configFile."waybar/style.css".source = ../waybar_css;
 	};
 
 	  home.packages = with pkgs; [ #enabling workspaces through Dexperimental flag

@@ -4,6 +4,6 @@
     enable = true;
     configFile."hypr/hyprland.conf".source = ./config;
     configFile."waybar/config".source = ./config_waybar;
-		configFile."waybar/style.css".source = ../../waybar/waybar_css;
+		configFile."waybar/style.css".source = ../waybar_css;
   };
 }
