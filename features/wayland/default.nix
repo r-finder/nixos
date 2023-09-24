@@ -103,5 +103,6 @@ in
     keepassxc
     pavucontrol
     pinta
+    telegram-desktop
   ];  
 }

@@ -1,5 +1,15 @@
-{ config, pkgs, lib, inputs, username, customizations, ... }: {
-
+{ config, pkgs, lib, inputs, username, customizations, ... }: 
+let 
+  aliases = {
+    bbb = "sudo nixos-rebuild switch --flake ~/nixos";
+    ls = "ls --color=auto";
+    ll = "ls -l";
+    la = "ls -al";
+    grep = "grep --color=auto";
+    c = "clear & clear";
+  };
+in
+{
   imports = [ 
     ./firefox/firefox.nix 
     ./desktops/${lib.strings.toLower customizations.desktop}
@@ -21,14 +31,7 @@
     initExtra = ''
       PS1="[\[$(tput bold)\]\u@\h\[$(tput sgr0)\] \w]\[$(tput sgr0)\]\$" 
     '';
-    shellAliases = {
-      bbb = "sudo nixos-rebuild switch --flake ~/nixos";
-      ls = "ls --color=auto";
-      ll = "ls -l";
-      la = "ls -al";
-      grep = "grep --color=auto";
-      c = "clear & clear";
-    };
+    shellAliases = aliases;
 
     profileExtra = ''
       [[ "$(tty)" == /dev/tty1 ]] && {
@@ -47,30 +50,13 @@
       #{ name = "grc"; src = pkgs.fishPlugins.grc.src; }
     ];
 
-    shellAliases = {
-      bbb = "sudo nixos-rebuild switch --flake ~/nixos";
-      ls = "ls --color=auto";
-      ll = "ls -l";
-      la = "ls -al";
-      grep = "grep --color=auto";
-      c = "clear & clear";
-    };
+    shellAliases = aliases;
 
     loginShellInit = ''
       if test (tty) = "/dev/tty1"
         ${customizations.desktop}
       end
     '';
-  };
-
-  home.pointerCursor = {
-    name = "Adwaita";
-    package = pkgs.gnome.adwaita-icon-theme;
-    size = 24;
-    x11 = {
-      enable = true;
-      defaultCursor = "Adwaita";
-    };
   };
 
   programs.home-manager.enable = true;
