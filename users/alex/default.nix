@@ -5,6 +5,7 @@
     ./desktops/${lib.strings.toLower customizations.desktop}
     ./vscode
     ./shell.nix
+    ./alacritty.nix
   ];
 
   home.stateVersion = "23.05";

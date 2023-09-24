@@ -82,6 +82,7 @@ in
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
+
   environment.systemPackages = with pkgs; [
     configure-gtk
     bmenu

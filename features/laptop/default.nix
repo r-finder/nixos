@@ -26,7 +26,7 @@
       CPU_MIN_PERF_ON_BAT = 0;
       CPU_MAX_PERF_ON_BAT = 40;
 
-      CPU_BOOST_ON_AC=0;
+      CPU_BOOST_ON_AC=1;
       CPU_BOOST_ON_BAT=0;
 
       INTEL_GPU_MAX_FREQ_ON_AC=800; #really 1150
