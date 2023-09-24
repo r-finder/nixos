@@ -1,8 +1,0 @@
-profile home_office {
-  output "eDP-1" position 0,210 scale 1.500000
-  output "Lenovo Group Limited E24q-20 V5FHK692" mode 2560x1440@74.780Hz position 1707,0
-}
-
-profile undocked {
-  output "eDP-1" scale 1.500000
-}

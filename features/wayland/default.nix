@@ -18,7 +18,7 @@ let
       gnome_schema=org.gnome.desktop.interface
       gsettings set $gnome_schema gtk-theme 'Adwaita'
       gsettings set $gnome_schema color-scheme 'prefer-dark'
-      gsettings set $gnome_schema font-name 'Sans 8'
+      gsettings set $gnome_schema font-name 'Sans 9'
     '';
   };
 
@@ -35,8 +35,6 @@ in
 {
   imports =
     [ 
-      #./sway.nix
-      #./hyprland.nix
       ./${lib.strings.toLower desktop}.nix
     ];
 
@@ -99,7 +97,6 @@ in
     wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
     mako # notification system developed by swaywm maintainer
     wdisplays # tool to configure displays
-    kanshi
     alacritty
 
     zathura
