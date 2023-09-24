@@ -11,13 +11,13 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: 
-  let 
+  let
     system = "x86_64-linux";
     hostname = "stinkpad";
     username = "alex";
     customizations = {
       shell = "fish";
-      desktop = "Hyprland";
+      desktop = "sway";
     };
   in 
   {
