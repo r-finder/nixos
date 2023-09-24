@@ -51,7 +51,7 @@ in
     ];
   };
 
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     noto-fonts
     font-awesome
   ];
