@@ -8,34 +8,33 @@
 
     configure = {
       customRC  = ''
-                set number relativenumber
-                highlight LineNr ctermfg=DarkGray
+        luafile ${./nvim.lua}
 
-                set encoding=utf-8
+        set number relativenumber
+        highlight LineNr ctermfg=DarkGray
 
-                set hlsearch
-                set incsearch
-                set ignorecase
-                set smartcase
+        set encoding=utf-8
 
-                syntax on
+        set hlsearch
+        set incsearch
+        set ignorecase
+        set smartcase
+
+        syntax on
+
+        nmap <C-n> :NvimTreeToggle<CR>
       '';
 
       packages.myVimPackage = with pkgs.vimPlugins; {
-                # loaded on launch
-                start = [ 
-                    # fugitive 
-                    # nvim-lspconfig
-                    nvim-treesitter.withAllGrammars
-                    # plenary-nvim
-                    # gruvbox-material
-                    # mini-nvim
-                    vim-nix
-                    lightline-vim
-                  ];
-                # manually loadable by calling `:packadd $plugin-name`
-                opt = [ ];
-              };
-            };
-          };
-        }
+        start = [ 
+            nvim-treesitter.withAllGrammars
+            vim-nix
+            lightline-vim
+            nvim-tree-lua
+            nvim-web-devicons
+          ];
+        opt = [ ];
+      };
+    };
+  };
+}

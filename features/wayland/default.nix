@@ -52,6 +52,7 @@ in
   fonts.packages = with pkgs; [
     noto-fonts
     font-awesome
+    nerdfonts
   ];
 
   sound.enable = true;
