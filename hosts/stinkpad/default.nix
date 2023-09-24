@@ -13,7 +13,6 @@
       inputs.home-manager.nixosModules.home-manager
       ./hardware-configuration.nix
       ../../features/secrets
-      ../../features/crypto
       ../../features/wayland
       ../../features/laptop
       ../../features/workstation

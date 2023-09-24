@@ -10,4 +10,10 @@
     #vscode 
     nixfmt
   ];
+
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
+
 }
