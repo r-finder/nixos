@@ -1,8 +1,8 @@
-{ config, pkgs, lib, inputs, username, desktop, ... }: {
+{ config, pkgs, lib, inputs, username, customizations, ... }: {
 
   imports = [ 
     ./firefox/firefox.nix 
-    ./desktops/${lib.strings.toLower desktop}
+    ./desktops/${lib.strings.toLower customizations.desktop}
     ./vscode
   ];
 
@@ -32,7 +32,7 @@
 
     profileExtra = ''
       [[ "$(tty)" == /dev/tty1 ]] && {
-        ${desktop}
+        ${customizations.desktop}
       }
     '';
   };
@@ -58,7 +58,7 @@
 
     loginShellInit = ''
       if test (tty) = "/dev/tty1"
-        ${desktop}
+        ${customizations.desktop}
       end
     '';
   };

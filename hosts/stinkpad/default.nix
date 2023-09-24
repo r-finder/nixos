@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, hostname, username, desktop, ... }:
+{ config, pkgs, inputs, hostname, username, customizations, ... }:
 {
   system.stateVersion = "23.05"; # Did you read the comment?
   nix = {
@@ -44,15 +44,13 @@
      isNormalUser = true;
      extraGroups = [ "wheel" ]; 
      shell = pkgs.fish;
-     packages = with pkgs; [
-
-     ];
   };
+
   programs.fish.enable = true;
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.extraSpecialArgs = { inherit username desktop; };
+  home-manager.extraSpecialArgs = { inherit username customizations; };
   home-manager.users.${username} = import ../../users/${username};  
 
   # List packages installed in system profile. To search, run:

@@ -15,11 +15,14 @@
     system = "x86_64-linux";
     hostname = "stinkpad";
     username = "alex";
-    desktop = "sway";
+    customizations = {
+      shell = "fish";
+      desktop = "Hyprland";
+    };
   in 
   {
     nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs system hostname username desktop; };
+      specialArgs = { inherit inputs system hostname username customizations; };
       modules = [
         ./hosts/${hostname}
       ];

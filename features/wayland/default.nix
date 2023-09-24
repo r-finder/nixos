@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, desktop, ... }:
+{ config, pkgs, lib, inputs, customizations, ... }:
 let 
   # currently, there is some friction between sway and gtk:
   # https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland
@@ -35,7 +35,7 @@ in
 {
   imports =
     [ 
-      ./${lib.strings.toLower desktop}.nix
+      ./${lib.strings.toLower customizations.desktop}.nix
     ];
 
   nixpkgs.config.packageOverrides = pkgs: {
