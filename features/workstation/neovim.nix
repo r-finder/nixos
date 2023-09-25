@@ -29,7 +29,8 @@
         start = [ 
             nvim-treesitter.withAllGrammars
             vim-nix
-            lightline-vim
+            # lightline-vim
+            vim-airline
             nvim-tree-lua
             nvim-web-devicons
           ];
